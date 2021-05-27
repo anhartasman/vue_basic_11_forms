@@ -1,8 +1,8 @@
 # vue_basic_11_forms
 
-# 138. v-Model & Inputs
+# 139. Working with v-model Modifiers and Numbers
 
-Bagaimana mengkoneksikan vue dengan form itu
-Bagaimana cara mendapatkan input
-Bagaimana cara validasi form
-Bagaimana cara membangun form-control sendiri
+Mendapatkan Input Age
+type="number" otomatis membuat v-model mempunyai tipe number. Bisa juga dengan v-model.number
+v-model juga memiliki v-model.lazy dan behavior lainnya
+ref tidak memiliki konversi tipe data secara otomatis
