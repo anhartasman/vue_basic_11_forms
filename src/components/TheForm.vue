@@ -19,33 +19,40 @@
     </div>
     <div class="form-control">
       <h2>What are you interested in?</h2>
+      <!-- Tanamkan v-model dam value ke setiap checkbox -->
       <div>
-        <input id="interest-news" name="interest" type="checkbox" />
+        <input id="interest-news" name="interest" type="checkbox" value="news" v-model="interest" />
         <label for="interest-news">News</label>
       </div>
       <div>
-        <input id="interest-tutorials" name="interest" type="checkbox" />
+        <input id="interest-tutorials" name="interest" type="checkbox" value="tutorials" v-model="interest" />
         <label for="interest-tutorials">Tutorials</label>
       </div>
       <div>
-        <input id="interest-nothing" name="interest" type="checkbox" />
+        <input id="interest-nothing" name="interest" type="checkbox" value="nothing" v-model="interest" />
         <label for="interest-nothing">Nothing</label>
       </div>
     </div>
     <div class="form-control">
       <h2>How do you learn?</h2>
+      <!-- Tanamkan v-model dan value ke setiap radiobutton -->
       <div>
-        <input id="how-video" name="how" type="radio" />
+        <input id="how-video" name="how" type="radio" value="video" v-model="how" />
         <label for="how-video">Video Courses</label>
       </div>
       <div>
-        <input id="how-blogs" name="how" type="radio" />
+        <input id="how-blogs" name="how" type="radio" value="blog" v-model="how" />
         <label for="how-blogs">Blogs</label>
       </div>
       <div>
-        <input id="how-other" name="how" type="radio" />
+        <input id="how-other" name="how" type="radio" value="other" v-model="how" />
         <label for="how-other">Other</label>
       </div>
+    </div>
+    <!-- Kalau hanya ada satu checkbox maka tipe datanya boolean dan tidak perlu diberikan value -->
+    <div class="form-control">
+      <input type="checkbox" name="confirm-terms" id="confirm-terms" v-model="confirm">
+      <label for="confirm-terms"> Agree to terms of use?</label>
     </div>
     <div>
       <button>Save Data</button>
@@ -59,7 +66,10 @@ export default {
     return {
       userName:'',
       userAge:null,
-      referrer:'wom' //wom sebagai element default yang dipilih
+      referrer:'wom', //wom sebagai element default yang dipilih
+      interest:[], // interest bertipe array karena mengambil data dari checkboxes
+      how:null,
+      confirm:false,
     }
   },
   methods:{
@@ -73,6 +83,15 @@ export default {
       this.userAge=null;
       console.log('Referrer: '+this.referrer);
       this.referrer='wom'; // setelah disubmit, kembali ke pilih wom
+      console.log('Checkboxes');
+      console.log(this.interest);
+      console.log('Radio buttons');
+      console.log(this.how);
+      this.interest=[];
+      this.how=null;
+      console.log('Confirm?');
+      console.log(this.confirm);
+      this.confirm=false;
     }
   }
 }

@@ -1,5 +1,5 @@
 # vue_basic_11_forms
 
-# 140. v-model and Dropdowns
+# 141. Using v-model with Checkboxes & Radiobuttons
 
-Mendapatkan Input dari select component
+Mendapatkan Input dari checkbox dan radio buttons
